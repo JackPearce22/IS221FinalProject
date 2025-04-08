@@ -5,6 +5,9 @@ public class Main {
 
     public static void main(String[] args){
 
+            System.out.print("***Welcome to Smart Wealth Allocator***");
+            scan.nextLine();
+
             System.out.print("Please provide your risk tolerance(high, medium, low): ");
             String riskTolerance = scan.nextLine();
 
