@@ -8,6 +8,8 @@ public class Main {
         String riskTolerance = scan.nextLine();
 
         int riskScore = calcRiskScore(riskTolerance);
+        System.out.println("Your risk score is: " + riskScore);
+
 
         System.out.print("Please provide your monthly income: ");
         long monthlyIncome = scan.nextLong();
@@ -21,19 +23,15 @@ public class Main {
 
     private static int calcRiskScore(String riskTolerance) {
         System.out.println("Calculating Risk Score...");
-        int riskScore;
         if (riskTolerance.equalsIgnoreCase("low")) {
-            riskScore = 33;
+            return 33;
         } else if (riskTolerance.equalsIgnoreCase("medium")) {
-            riskScore = 66;
+            return 66;
         } else if (riskTolerance.equalsIgnoreCase("high")) {
-            riskScore = 100;
+            return 100;
         } else {
-            System.out.println("Invalid input. Setting risk score to 0.");
-            riskScore = 0;
+            System.out.println("Invalid input. Please select low, medium or high.");
         }
-        System.out.println("Your risk score is: " + riskScore);
-        return riskScore;
     }
 
         private static void calcTimeScore () {
