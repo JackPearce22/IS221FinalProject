@@ -35,9 +35,14 @@ public class Main {
             System.out.println("Your risk score is: " + riskScore);
 
 
-            System.out.print("Please provide your yearly income: ");
-            long yearlyIncome = scan.nextLong();
+            System.out.print("Please provide your annual income: ");
+            long annualIncome = scan.nextLong();
             scan.nextLine();
+
+            System.out.print("Please provide your filing status (single or married): ");
+            String filingStatus = scan.nextLine();
+
+            calcTaxBracket(annualIncome, filingStatus);
 
             System.out.print("Please provide your time horizon (years): ");
             double timeHorizon = scan.nextInt();
@@ -82,8 +87,50 @@ public class Main {
                 return 0;
             }
         }
-        private static void calcTaxBracket () {
+        private static void calcTaxBracket (long annualIncome, String filingStatus) {
             System.out.println("Calculating Tax Bracket...");
+
+            double taxRate;
+
+            if (filingStatus.equalsIgnoreCase("single")) {
+                if (annualIncome <= 11925 && annualIncome > 0) {
+                    taxRate = 10;
+                } else if (annualIncome <= 48475 && annualIncome > 0) {
+                    taxRate = 12;
+                } else if (annualIncome <= 103350 && annualIncome > 0) {
+                    taxRate = 22;
+                } else if (annualIncome <= 250525 && annualIncome > 0) {
+                    taxRate = 32;
+                } else if (annualIncome <= 626350 && annualIncome > 0) {
+                    taxRate = 35;
+                } else {
+                    taxRate = 37;
+                }
+            } else if (filingStatus.equalsIgnoreCase("married")) {
+                if (annualIncome <= 23850 && annualIncome > 0) {
+                    taxRate = 10;
+                } else if (annualIncome <= 96950 && annualIncome > 0) {
+                    taxRate = 12;
+                } else if (annualIncome <= 206700 && annualIncome > 0) {
+                    taxRate = 22;
+                } else if (annualIncome <= 394600 && annualIncome > 0) {
+                    taxRate = 24;
+                } else if (annualIncome <= 501050 && annualIncome > 0) {
+                    taxRate = 32;
+                } else if (annualIncome <= 751600 && annualIncome > 0) {
+                    taxRate = 35;
+                } else {
+                    taxRate = 37;
+                }
+            } else {
+                System.out.println("Invalid filing status.");
+                String[] args = {};
+                main(args);
+                return;
+            }
+
+            System.out.println("Your annual income is $" + annualIncome);
+            System.out.println("Your estimated tax bracket is: " + (int)taxRate + "%");
         }
         private static void calcAllocation () {
             System.out.println("Calculating Allocation...");
