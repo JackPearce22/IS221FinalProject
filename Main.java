@@ -12,12 +12,15 @@ public class Main {
             System.out.println("Your risk score is: " + riskScore);
 
 
-            System.out.print("Please provide your monthly income: ");
-            long monthlyIncome = scan.nextLong();
+            System.out.print("Please provide your yearly income: ");
+            long yearlyIncome = scan.nextLong();
             scan.nextLine();
 
             System.out.print("Please provide your time horizon (years): ");
-            double timeHorizon = scan.nextDouble();
+            double timeHorizon = scan.nextInt();
+
+            int timeScore = calcTimeScore(timeHorizon);
+            System.out.println("Your time score is: " + timeScore);
             scan.nextLine();
 
 
@@ -39,8 +42,22 @@ public class Main {
         }
     }
 
-        private static void calcTimeScore () {
+        private static int calcTimeScore (double years) {
             System.out.println("Calculating Time Score...");
+            if (years < 2) {
+                return 25;
+            } else if (years <= 5) {
+                return 50;
+            } else if (years <= 10) {
+                return 75;
+            } else if (years > 10) {
+                return 100;
+            } else {
+                System.out.println("Invalid input. Please enter a valid number of years.");
+                String[] args = {};
+                main(args);
+                return 0;
+            }
         }
         private static void calcTaxBracket () {
             System.out.println("Calculating Tax Bracket...");
