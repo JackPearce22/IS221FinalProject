@@ -4,20 +4,22 @@ public class Main {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args){
-        System.out.print("Please provide your risk tolerance(high, medium, low): ");
-        String riskTolerance = scan.nextLine();
 
-        int riskScore = calcRiskScore(riskTolerance);
-        System.out.println("Your risk score is: " + riskScore);
+            System.out.print("Please provide your risk tolerance(high, medium, low): ");
+            String riskTolerance = scan.nextLine();
+
+            int riskScore = calcRiskScore(riskTolerance);
+            System.out.println("Your risk score is: " + riskScore);
 
 
-        System.out.print("Please provide your monthly income: ");
-        long monthlyIncome = scan.nextLong();
-        scan.nextLine();
+            System.out.print("Please provide your monthly income: ");
+            long monthlyIncome = scan.nextLong();
+            scan.nextLine();
 
-        System.out.print("Please provide your time horizon (years): ");
-        double timeHorizon = scan.nextDouble();
-        scan.nextLine();
+            System.out.print("Please provide your time horizon (years): ");
+            double timeHorizon = scan.nextDouble();
+            scan.nextLine();
+
 
     }
 
@@ -31,6 +33,9 @@ public class Main {
             return 100;
         } else {
             System.out.println("Invalid input. Please select low, medium or high.");
+            String[] args = {};
+            main(args);
+            return 0;
         }
     }
 
