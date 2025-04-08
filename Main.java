@@ -4,7 +4,7 @@ public class Main {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args){
-            System.out.println("Welcome to the Wealth Allocator\n");
+            System.out.println("*****Welcome to Smart Wealth Allocator*****\n");
             System.out.print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
                     "⠀⠀⠀⠀⠀⠀⡤⡄⠒⠊⠉⢀⣀⢨⠷⡄⠀⠀⠀⠀⠀⠀\n" +
                     "⠀⠀⠀⠀⠀⢀⡇⠈⢹⣩⢟⣜⣐⡵⡿⢇⠀⠀⠀⠀⠀⠀\n" +
@@ -24,9 +24,6 @@ public class Main {
                     "⠀⠀⠀⠀⠀⠈⢧⠀⠀⠀⠀⠀⠀⢀⣞⣉⠭⠴⠋⠀⠀⠀\n" +
                     "⠀⠀⠀⠀⠀⠀⠘⡆⠀⡶⣶⠶⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀\n" +
                     "⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-
-            System.out.print("***Welcome to Smart Wealth Allocator***");
-            scan.nextLine();
 
             System.out.print("Please provide your risk tolerance(high, medium, low): ");
             String riskTolerance = scan.nextLine();
