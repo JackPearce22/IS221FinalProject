@@ -48,6 +48,8 @@ public class Main {
             System.out.println("Your time score is: " + timeScore);
             scan.nextLine();
 
+            calcAllocation(riskScore, timeScore);
+
 
     }
 
@@ -129,7 +131,25 @@ public class Main {
             System.out.println("Your annual income is $" + annualIncome);
             System.out.println("Your estimated tax bracket is: " + (int)taxRate + "%");
         }
-        private static void calcAllocation () {
+        private static void calcAllocation (int riskScore, int timeScore){
             System.out.println("Calculating Allocation...");
+
+            int allocationScore = riskScore * timeScore;
+
+            System.out.println("Your allocation score is: " + allocationScore);
+
+            if (allocationScore >= 825 && allocationScore <= 1650) {
+                System.out.println("Recommended Allocation: Conservative");
+            } else if (allocationScore > 2475 && allocationScore <= 2500) {
+                System.out.println("Recommended Allocation: Moderately Conservative");
+            } else if (allocationScore > 3300 && allocationScore <= 5000) {
+                System.out.println("Recommended Allocation: Moderate Allocation");
+            } else if (allocationScore > 6600 && allocationScore <= 7500) {
+                System.out.println("Recommended Allocation: Moderately Aggressive");
+            } else if (allocationScore == 10000) {
+                System.out.println("Recommended Allocation: Aggressive");
+            } else {
+                System.out.println("Unable to determine a precise allocation. Please review your inputs.");
+            }
         }
     }
