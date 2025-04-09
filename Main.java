@@ -140,11 +140,11 @@ public class Main {
 
             if (allocationScore >= 825 && allocationScore <= 1650) {
                 System.out.println("Recommended Allocation: Conservative");
-            } else if (allocationScore > 2475 && allocationScore <= 2500) {
+            } else if (allocationScore >= 2475 && allocationScore <= 2500) {
                 System.out.println("Recommended Allocation: Moderately Conservative");
-            } else if (allocationScore > 3300 && allocationScore <= 5000) {
+            } else if (allocationScore >= 3300 && allocationScore <= 5000) {
                 System.out.println("Recommended Allocation: Moderate Allocation");
-            } else if (allocationScore > 6600 && allocationScore <= 7500) {
+            } else if (allocationScore >= 6600 && allocationScore <= 7500) {
                 System.out.println("Recommended Allocation: Moderately Aggressive");
             } else if (allocationScore == 10000) {
                 System.out.println("Recommended Allocation: Aggressive");
