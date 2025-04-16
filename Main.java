@@ -48,8 +48,13 @@ public class Main {
             System.out.println("Your time score is: " + timeScore);
             scan.nextLine();
 
+            System.out.print("Please provide your monthly expenses: ");
+            double monthlyExpenses = scan.nextDouble();
+
             calcAllocation(riskScore, timeScore);
 
+            double minEmergencyFund = monthlyExpenses * 3;
+            double maxEmergencyFund = monthlyExpenses * 6;
 
     }
 
@@ -151,5 +156,8 @@ public class Main {
             } else {
                 System.out.println("Unable to determine a precise allocation. Please review your inputs.");
             }
+
+
+
         }
     }
