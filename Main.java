@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     private static final Scanner scan = new Scanner(System.in);
-
+//test
     public static void main(String[] args){
             System.out.println("*****Welcome to Smart Wealth Allocator*****\n");
             System.out.print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
