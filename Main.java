@@ -180,55 +180,55 @@ public class Main {
 
             if (allocationType == "Conservative"){
                 rothFunds += "conservative growth (WBALX, VWINX, FXNAX )";
-                portfolioBreakdown += "10% Large cap stocks\n" +
-                        "15 % Small Cap\n" +
-                        "15% International\n" +
-                        "50% Fixed Income\n" +
-                        "10% Cash\n";
+                portfolioBreakdown += "\t\t10% Large cap stocks\n" +
+                        "\t\t15 % Small Cap\n" +
+                        "\t\t15% International\n" +
+                        "\t\t50% Fixed Income\n" +
+                        "\t\t10% Cash\n";
             } else if (allocationType == "Moderately Conservative") {
                 rothFunds += "moderately conservative growth (VWINX, FXNAX, VFSTX )";
-                portfolioBreakdown += "15% Large cap stocks\n" +
-                        "20 % Small Cap\n" +
-                        "20% International\n" +
-                        "35% Fixed Income\n" +
-                        "10% Cash\n";
+                portfolioBreakdown += "\t\t15% Large cap stocks\n" +
+                        "\t\t20 % Small Cap\n" +
+                        "\t\t20% International\n" +
+                        "\t\t35% Fixed Income\n" +
+                        "\t\t10% Cash\n";
 
             } else if (allocationType == "Moderate Allocation") {
                 rothFunds += "moderate allocation growth (FSKAX, VBIAX, FXNAX)";
-                portfolioBreakdown += "10% Large cap stocks\n" +
-                        "15 % Small Cap\n" +
-                        "15% International\n" +
-                        "50% Fixed Income\n" +
-                        "10% Cash\n";
+                portfolioBreakdown += "\t\t10% Large cap stocks\n" +
+                        "\t\t15 % Small Cap\n" +
+                        "\t\t15% International\n" +
+                        "\t\t50% Fixed Income\n" +
+                        "\t\t10% Cash\n";
 
             } else if (allocationType == "Moderately Aggressive") {
                 rothFunds += "moderately aggressive growth (VTI, FTIHX, VWELX)";
-                portfolioBreakdown += "50% Large cap stocks\n" +
-                        "20% Small Cap\n" +
-                        "25% International\n" +
-                        "5% Cash\n";
+                portfolioBreakdown += "\t\t50% Large cap stocks\n" +
+                        "\t\t20% Small Cap\n" +
+                        "\t\t25% International\n" +
+                        "\t\t5% Cash\n";
 
             } else if (allocationType == "Aggressive") {
                 rothFunds += "aggressive growth (VOOG, SMH, QQQM )";
-                portfolioBreakdown += "50% Large cap stocks\n" +
-                        "20 % Small Cap\n" +
-                        "25% International\n" +
-                        "5% Cash\n";
+                portfolioBreakdown += "\t\t50% Large cap stocks\n" +
+                        "\t\t20 % Small Cap\n" +
+                        "\t\t25% International\n" +
+                        "\t\t5% Cash\n";
 
             } else{
                 System.out.println("Error");
             }
 
             return "Emergency Fund (3 - 6 months of expenses) in High Yield Savings Account\n" +
-                    "This would equal ~"+minEmergencyFund+"-"+maxEmergencyFund+"\n" +
-                    "CIT bank offers a High-Yield Savings Account offering variable 4.10% Annual Percentage Yield with a minimum $5,000 balance, but interest may change at any time\n" +
+                    "\tThis would equal ~ $"+minEmergencyFund+"- $"+maxEmergencyFund+"\n" +
+                    "\tCIT bank offers a High-Yield Savings Account offering variable 4.10% Annual Percentage Yield with a minimum $5,000 balance, but interest may change at any time\n" +
                     "Retirement Plan (5%)\n" +
-                    "Choose Roth 401k if given the option for company plan\n" +
-                    "5% of income to match company benefits = "+retirementPlan+" per year\n" +
-                    "Funds to consider in Roth IRA for "+rothFunds+"\n" +
+                    "\tChoose Roth 401k if given the option for company plan\n" +
+                    "\t5% of income to match company benefits = "+retirementPlan+" per year\n" +
+                    "\tFunds to consider in Roth IRA for "+rothFunds+"\n" +
                     "Brokerage Account (10% of income)\n" +
-                    "10% of income = "+brokerageAccount+" per year\n" +
-                    "Portfolio Breakdown\n" + portfolioBreakdown;
+                    "\t10% of income = "+brokerageAccount+" per year\n" +
+                    "\tPortfolio Breakdown\n" + portfolioBreakdown;
 
         }
     }
