@@ -42,9 +42,24 @@ public class Main {
             calcTaxBracket(annualIncome, filingStatus);
 
             System.out.print("Please provide your time horizon (years): ");
-            double timeHorizon = scan.nextInt();
+            double timeHorizon = scan.nextDouble();
 
             int timeScore = calcTimeScore(timeHorizon);
+        System.out.print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                "        _____\n" +
+                "     _.'_____`._\n" +
+                "   .'.-'  12 `-.`.\n" +
+                "  /,' 11      1 `.\\\n" +
+                " // 10      /   2 \\\\\n" +
+                ";;         /       ::\n" +
+                "|| 9  ----O      3 ||\n" +
+                "::                 ;;\n" +
+                " \\\\ 8           4 //\n" +
+                "  \\`. 7       5 ,'/\n" +
+                "   '.`-.__6__.-'.'\n" +
+                "    ((-._____.-))\n" +
+                "    _))       ((_\n" +
+                "   '--'       '--'\n");
             System.out.println("Your time score is: " + timeScore);
             scan.nextLine();
 
