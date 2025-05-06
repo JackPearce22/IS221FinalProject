@@ -74,6 +74,11 @@ public class Main {
 
     }
 
+    /**
+     * This method assigns a numeric risk score based on the user's risk tolerance input
+     * @param riskTolerance
+     * @return
+     */
     private static int calcRiskScore(String riskTolerance) {
         System.out.println("Calculating Risk Score...");
         if (riskTolerance.equalsIgnoreCase("low")) {
@@ -90,7 +95,17 @@ public class Main {
         }
     }
 
-        private static int calcTimeScore (double years) {
+    /**
+     * This method assigns a numeric time score based on the user's time horizon.
+     * Time horizon is a value that measures how long the user plans to keep their investments
+     * If the time horizon input < 2 years: score = 25
+     * <= 5 years: score = 50
+     * <= 10 years: score = 75
+     * > 10 years: score = 100
+     * @param years
+     * @return
+     */
+    private static int calcTimeScore (double years) {
             System.out.println("Calculating Time Score...");
             if (years < 2) {
                 return 25;
@@ -107,7 +122,20 @@ public class Main {
                 return 0;
             }
         }
-        private static void calcTaxBracket (long annualIncome, String filingStatus) {
+
+    /**
+     * This method estimates a tax bracket percentage based on income and filing status
+     * @param annualIncome
+     * @param filingStatus
+     */
+
+    /**
+     * Uses income and filing status to estimate the user's federal tax bracket.
+     * Uses 2024 tax brackets for single filers and married filers.
+     * @param annualIncome
+     * @param filingStatus
+     */
+    private static void calcTaxBracket (long annualIncome, String filingStatus) {
             System.out.println("Calculating Tax Bracket...");
 
             double taxRate;
@@ -152,7 +180,16 @@ public class Main {
             System.out.println("Your annual income is $" + annualIncome);
             System.out.println("Your estimated tax bracket is: " + (int)taxRate + "%");
         }
-        private static String calcAllocation (int riskScore, int timeScore){
+
+    /**
+     * Calculates an overall investment allocation recommendation based on combined risk and time score.
+     * The different ranges of allocation will determine the recommended portfolio type:
+     * Conservative, Moderately Conservative, Moderate, Moderately Aggressive, and Aggressive.
+     * @param riskScore
+     * @param timeScore
+     * @return
+     */
+    private static String calcAllocation (int riskScore, int timeScore){
             System.out.println("Calculating Allocation...");
 
             int allocationScore = riskScore * timeScore;
@@ -236,6 +273,13 @@ public class Main {
 
         }
 
+    /**
+     * Returns a summary message with financial information and suggested allocation based on user inputs.
+     * @param annualIncome
+     * @param monthlyExpenses
+     * @param allocationType
+     * @return
+     */
         private static String printResult(long annualIncome, double monthlyExpenses, String allocationType){
             double minEmergencyFund = monthlyExpenses * 3;
             double maxEmergencyFund = monthlyExpenses * 6;
