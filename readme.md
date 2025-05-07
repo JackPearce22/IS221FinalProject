@@ -1,42 +1,26 @@
-# Example Solutions for Old Workbook
+## Smart Wealth Allocator
+__Smart Wealth Allocator__ is an application that helps users make informed financial decisions by assessing their __income__, __expenses__, __risk tolerance__, and __investment time horizon__. Based on this input, it provides a recommended investment allocation strategy tailored to the user's financial profile.
 
-- Example Answers for problems proposed by The *Python Workbook* by B. Stephenson (**Springer**, 2014)
-  - These were used in teaching a Python course
-  - Not every example was used (as noted or just skipped)
-- There are also self made examples which are indicted in each specific program.
+### Features:
+- Calculates estimated tax bracket based on income and filing status
+- Assesses risk tolerance and time horizon for investments
+- Provides a custom investment allocation strategy (e.g. Conservative, Moderate, Aggressive...)
+- Outputs a summary with income, expenses, and recommendation
+- Includes a financial disclaimer for responsible usage
 
-#### Note on Examples
-This is also used with Junior & Senior level (undergrad) Data analytic courses.
-The idea is that the students already have a general understanding
-of programming (with Java & C++) but have not encountered data analytic
-applications of programming.
+### How it works
+1. User is prompted to input:
+  - Risk tolerance(high, medium, low)
+  - Annual income
+  - Filing status (single or married)
+  - Investment time horizon (in years)
+  - Monthly expenses
+2. The program:
+  - Calculates a __risk score__ and __time score__
+  - Estimates the __tax bracket__
+  - Combines these values into an __allocation score__
+  - Outputs a __suggested investment strategy__
 
-> There was also an expectation of full completion of at least calculus & statistics with some students having completed linear algebra and discrete math courses. So the math concepts only received a cursory review, with the course focused on application.
+### Program Example
+![Smart Wealth Allocator.gif](Images/Smart%20Wealth%20Allocator.gif)
 
-Due to this, the class moved very quickly through the first chapters in the 
-workbook and found the solutions that were provided were too elementary. They also
-required a small update in a few places (yeah! type hints) - as is to be expected after 10+ years.
-
-#### Modules
-- *Module 1*: Basic input and output using the console and standard control structures
-- *Module 2*: More detailed look at control and data structures with introduction to loops
-- *Module 3*: File input and output with a Bag of Words project
-- *Module 4*: Single program at the moment which shows a basic graph (will expand with a game example soon)
-- *Module 5*: Using parallel operations (threading)
-- *Network Operations*: Provides examples of Networking tools (sockets with requests and a little automation)
-- *Review 1*: Classes with type hinting and basic review of math
-
-## License
-
-The content of any data used within projects 
-themselves is licensed under the 
-[Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/)
-while the source code of any script or program 
-is licensed under the [MIT license](LICENSE.md).
-
-<small> 
-
-*All code was authored and written by Professor Greenwell (self) based on 
-problems proposed in workbook or his own lessons.*
-
-</small>
