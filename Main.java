@@ -244,77 +244,9 @@ public class Main {
      * @param allocationType
      * @return
      */
-        private static String printResult(long annualIncome, double monthlyExpenses, String allocationType){
-            double minEmergencyFund = monthlyExpenses * 3;
-            double maxEmergencyFund = monthlyExpenses * 6;
-
-            double retirementPlan = annualIncome * .05;
-            double brokerageAccount = annualIncome * .1;
-
-            String rothFunds = "";
-            String portfolioBreakdown = "";
-
-            if (allocationType.equals("Conservative")){
-                rothFunds += "conservative growth (WBALX, VWINX, FXNAX )";
-                portfolioBreakdown += """
-                        \t\t10% Large cap stocks
-                        \t\t15 % Small Cap
-                        \t\t15% International
-                        \t\t50% Fixed Income
-                        \t\t10% Cash
-                        """;
-            } else if (allocationType.equals("Moderately Conservative")) {
-                rothFunds += "moderately conservative growth (VWINX, FXNAX, VFSTX )";
-                portfolioBreakdown += """
-                        \t\t15% Large cap stocks
-                        \t\t20 % Small Cap
-                        \t\t20% International
-                        \t\t35% Fixed Income
-                        \t\t10% Cash
-                        """;
-
-            } else if (allocationType.equals("Moderate Allocation")) {
-                rothFunds += "moderate allocation growth (FSKAX, VBIAX, FXNAX, VOO)";
-                portfolioBreakdown += """
-                        \t\t10% Large cap stocks
-                        \t\t15 % Small Cap
-                        \t\t15% International
-                        \t\t50% Fixed Income
-                        \t\t10% Cash
-                        """;
-
-            } else if (allocationType.equals("Moderately Aggressive")) {
-                rothFunds += "moderately aggressive growth (VTI, FTIHX, VOO, QQQ)";
-                portfolioBreakdown += """
-                        \t\t50% Large cap stocks
-                        \t\t20% Small Cap
-                        \t\t25% International
-                        \t\t5% Cash
-                        """;
-
-            } else if (allocationType.equals("Aggressive")) {
-                rothFunds += "aggressive growth (VOO, QQQ, QQQM )";
-                portfolioBreakdown += """
-                        \t\t50% Large cap stocks
-                        \t\t20 % Small Cap
-                        \t\t25% International
-                        \t\t5% Cash
-                        """;
-
-            } else{
-                System.out.println("Error");
-            }
-
-            return "Emergency Fund (3 - 6 months of expenses) in High Yield Savings Account\n" +
-                    "\tThis would equal ~ $"+minEmergencyFund+"- $"+maxEmergencyFund+"\n" +
-                    "\tCIT bank offers a High-Yield Savings Account offering variable 4.10% Annual Percentage Yield with a minimum $5,000 balance, but interest may change at any time\n" +
-                    "Retirement Plan (5%)\n" +
-                    "\tChoose Roth 401k if given the option for company plan\n" +
-                    "\t5% of income to match company benefits = "+retirementPlan+" per year\n" +
-                    "\tFunds to consider in Roth IRA for "+rothFunds+"\n" +
-                    "Brokerage Account (10% of income)\n" +
-                    "\t10% of income = "+brokerageAccount+" per year\n" +
-                    "\tPortfolio Breakdown\n" + portfolioBreakdown;
+        private static String printResult(long annualIncome, double monthlyExpenses, String allocationType) {
+            String result = AllocationData.printResult(annualIncome, monthlyExpenses, allocationType);
+            return result;
 
         }
     }
